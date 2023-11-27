@@ -107,6 +107,8 @@
     <ItemGroup>
         <Compile Include="AssemblyInfo.fs" />
         <Compile Include="card.fs" />
+        <Compile Include="Combination.fs" />
+        <Compile Include="Combination.Tests.fs" />
         <Compile Include="Program.fs" />
         <Content Include="packages.config" />
     </ItemGroup>
