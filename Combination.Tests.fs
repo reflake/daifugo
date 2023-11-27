@@ -11,7 +11,7 @@
     let a cardRank (fn : cardProducer) = fn cardRank
     
     [<Fact>]
-    let ``should find two card combo`` () =
+    let ``should find a pair combo`` () =
         
         let hand = [ a Four Of Hearts; a Eight Of Spades; a King Of Diamonds; a Four Of Diamonds; a Six Of Hearts ]
         let actual = findSets hand
