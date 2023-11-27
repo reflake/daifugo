@@ -1,14 +1,14 @@
 ﻿module Card
 
-type Suit = | Hearts | Diamonds | Clubs | Spades
 type Rank = | Two | Three | Four | Five | Six | Seven | Eight | Nine | Ten | Jack | Queen | King | Ace
-type Card = | RegularCard of Suit * Rank
+type Suit = | Hearts | Diamonds | Clubs | Spades
+type Card = | RegularCard of  Rank * Suit
             | Joker
 
 let cardValue card =
     
     match card with
-    | RegularCard (_, rank) ->
+    | RegularCard (rank, _) ->
         match rank with
         | Two -> 2
         | Three -> 3

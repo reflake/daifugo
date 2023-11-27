@@ -3,7 +3,7 @@ open Card
 [<EntryPoint>]
 let main _ =
     
-    let myCard   = RegularCard(Hearts, Two)
+    let myCard   = RegularCard(Two, Hearts)
     let yourCard = Joker
     
     printfn "My card is value %O" (myCard |> cardValue)
