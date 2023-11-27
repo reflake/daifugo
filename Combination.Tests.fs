@@ -14,7 +14,7 @@
     [<Fact>]
     let ``should find a pair combo`` () =
         
-        let hand = [ a Four Of Hearts; a Eight Of Spades; a King Of Diamonds; a Four Of Diamonds; a Six Of Hearts ]
+        let hand = [ a Four Of Hearts; an Eight Of Spades; a King Of Diamonds; a Four Of Diamonds; a Six Of Hearts ]
         let actual = findSets hand
         let expected = [ a Four Of Hearts; a Four Of Diamonds ]
         
