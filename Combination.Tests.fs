@@ -1,15 +1,10 @@
 ﻿module Combination_tests
 
     open Card
+    open Combination_Tests_Utils
     open Combination
     open Xunit
     open FsUnit
-    
-    type cardProducer = Rank -> Suit -> Card
-    
-    let Of cardRank cardSuit = RegularCard(cardRank, cardSuit)
-    let a cardRank (fn : cardProducer) = fn cardRank
-    let an = a
     
     [<Fact>]
     let ``should find a pair combo`` () =
