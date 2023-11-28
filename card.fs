@@ -8,7 +8,7 @@ type Card = | RegularCard of Rank * Suit
             override x.ToString() =
                 match x with
                 | RegularCard(rank, suit) -> "a " + rank.ToString() + " of " + suit.ToString()
-                | Joker -> Joker.ToString()
+                | Joker -> "a Joker"
 
 let cardValue card =
     
