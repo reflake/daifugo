@@ -64,3 +64,15 @@
     let ``should find a four of a kind combo`` (hand, expectedFourOfKind) =
         
         findSets hand |> should equivalent expectedFourOfKind
+        
+    let noComboCases =
+        [|
+            [ a Three Of Diamonds ];
+            [ a Six Of Hearts; a Two Of Spades; a Nine Of Diamonds ]
+            [ a Queen Of Clubs; a Jack Of Clubs ]
+        |]
+    
+    [<TestCaseSource ("noComboCases")>]
+    let ``should find no combo`` (hand) =
+        
+        findSets hand |> should equal []
