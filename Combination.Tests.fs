@@ -67,7 +67,7 @@
         
     let noComboCases =
         [|
-            [ a Three Of Diamonds ];
+            [ a Three Of Diamonds ]
             [ a Six Of Hearts; a Two Of Spades; a Nine Of Diamonds ]
             [ a Queen Of Clubs; a Jack Of Clubs ]
         |]
@@ -75,4 +75,4 @@
     [<TestCaseSource ("noComboCases")>]
     let ``should find no combo`` (hand) =
         
-        findSets hand |> should equal []
+        findSets hand |> should equalSeq list<Card>.Empty
