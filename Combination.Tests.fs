@@ -6,22 +6,61 @@
     open NUnit.Framework
     open FsUnit
     
-    [<Test>]
-    let ``should find a pair combo`` () =
+    let pairCases =
+        [|
+            [| [ a Four Of Hearts; an Eight Of Spades; a Four Of Diamonds ];
+                 
+                 the Four Of [ Hearts; Diamonds] |]
+            
+            [| [ a Queen Of Spades; an Ace Of Spades; an Seven Of Clubs
+                 an Eight Of Diamonds; a Queen Of Diamonds ];
+                 
+                 the Queen Of [Diamonds; Spades] |]
+            
+            [| the Ace Of [ Clubs; Spades]
+               the Ace Of [ Clubs; Spades] |]
+        |]
+    
+    [<TestCaseSource ("pairCases")>]
+    let ``should find a pair combo`` (hand, expectedPair) =
         
-        let hand = [ a Four Of Hearts; an Eight Of Spades; a King Of Diamonds; a Four Of Diamonds; a Six Of Hearts ]
-        let expected = [ a Four Of Hearts; a Four Of Diamonds ]
+        findSets hand |> should equivalent expectedPair
         
-        findSets hand |> should equivalent expected
+    let threeOfKindCases =
+        [|
+            [| [ an Eight Of Spades; a Queen Of Clubs
+                 an Eight Of Hearts; a Two Of Clubs
+                 an Ace Of Diamonds; an Eight Of Clubs];
+                 
+                 the Eight Of [ Hearts; Clubs; Spades ] |]
+            
+            [| [ a King Of Diamonds; a Three Of Hearts
+                 a Three Of Spades; an Ace Of Clubs
+                 a Three Of Clubs; a Jack Of Diamonds];
+            
+                 the Three Of [ Hearts; Clubs; Spades] |]
+        |]
         
-    [<Test>]
-    let ``should find a three of a kind combo`` () =
+    [<TestCaseSource ("threeOfKindCases")>]
+    let ``should find a three of a kind combo`` (hand, expectedThreeOfKind) =
         
-        let hand = [
-            an Eight Of Spades; a Queen Of Clubs
-            an Eight Of Hearts; a Two Of Clubs
-            an Ace Of Diamonds; an Eight Of Clubs
-        ]
-        let expected = [ an Eight Of Spades; an Eight Of Hearts; an Eight Of Clubs ]
+        findSets hand |> should equivalent expectedThreeOfKind
         
-        findSets hand |> should equivalent expected
+    let fourOfKindCases =
+        [|
+            [| [ a Six Of Spades; a Six Of Diamonds; a Six Of Clubs
+                 a Seven Of Diamonds; a Six Of Hearts ]
+            
+               the Six Of [ Hearts; Diamonds; Clubs; Spades] |]
+            
+            [| [ a Two Of Clubs; a Queen Of Diamonds; a Nine Of Hearts
+                 a Two Of Diamonds; a Two Of Spades; a Five Of Hearts
+                 a Two Of Hearts ]
+            
+               the Two Of [ Hearts; Diamonds; Clubs; Spades] |]
+        |]
+        
+    [<TestCaseSource ("fourOfKindCases")>]
+    let ``should find a four of a kind combo`` (hand, expectedFourOfKind) =
+        
+        findSets hand |> should equivalent expectedFourOfKind
