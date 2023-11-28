@@ -29,3 +29,11 @@ let cardValue card =
         | King -> 13
         | Ace -> 14
     | Joker -> 15
+     
+let sameRank a b =
+    match a with
+    | RegularCard(a, _) ->
+        match b with
+        | RegularCard(b, _) -> a = b
+        | _ -> false
+    | Joker -> a = b
