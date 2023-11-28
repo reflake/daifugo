@@ -2,8 +2,13 @@
 
 type Rank = | Two | Three | Four | Five | Six | Seven | Eight | Nine | Ten | Jack | Queen | King | Ace
 type Suit = | Hearts | Diamonds | Clubs | Spades
-type Card = | RegularCard of  Rank * Suit
+type Card = | RegularCard of Rank * Suit
             | Joker
+            
+            override x.ToString() =
+                match x with
+                | RegularCard(rank, suit) -> "a " + rank.ToString() + " of " + suit.ToString()
+                | Joker -> Joker.ToString()
 
 let cardValue card =
     
