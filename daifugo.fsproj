@@ -3,8 +3,6 @@
     <Import Project="packages\NUnit.3.14.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.14.0\build\NUnit.props')" />
     <Import Project="packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.props" Condition="Exists('packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.props')" />
     <Import Project="packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.props" Condition="Exists('packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" />
-    <Import Project="packages\xunit.runner.visualstudio.2.5.4\build\net462\xunit.runner.visualstudio.props" Condition="Exists('packages\xunit.runner.visualstudio.2.5.4\build\net462\xunit.runner.visualstudio.props')" />
-    <Import Project="packages\xunit.core.2.6.2\build\xunit.core.props" Condition="Exists('packages\xunit.core.2.6.2\build\xunit.core.props')" />
     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <Import Project="packages\FSharp.Compiler.Tools.10.0.2\build\FSharp.Compiler.Tools.props" Condition="Exists('packages\FSharp.Compiler.Tools.10.0.2\build\FSharp.Compiler.Tools.props')" />
     <PropertyGroup>
@@ -87,22 +85,6 @@
         <Reference Include="System.Runtime" />
         <Reference Include="System.Runtime.Serialization" />
         <Reference Include="System.Xml" />
-        <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-          <HintPath>packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="xunit.assert, Version=2.6.2.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-          <HintPath>packages\xunit.assert.2.6.2\lib\netstandard1.1\xunit.assert.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="xunit.core, Version=2.6.2.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-          <HintPath>packages\xunit.extensibility.core.2.6.2\lib\net452\xunit.core.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="xunit.execution.desktop, Version=2.6.2.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-          <HintPath>packages\xunit.extensibility.execution.2.6.2\lib\net452\xunit.execution.desktop.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="AssemblyInfo.fs" />
@@ -118,16 +100,12 @@
       <PropertyGroup>
         <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
       </PropertyGroup>
-      <Error Condition="!Exists('packages\xunit.core.2.6.2\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.6.2\build\xunit.core.props'))" />
-      <Error Condition="!Exists('packages\xunit.core.2.6.2\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.6.2\build\xunit.core.targets'))" />
-      <Error Condition="!Exists('packages\xunit.runner.visualstudio.2.5.4\build\net462\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.runner.visualstudio.2.5.4\build\net462\xunit.runner.visualstudio.props'))" />
       <Error Condition="!Exists('packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.props'))" />
       <Error Condition="!Exists('packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.targets'))" />
       <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.props'))" />
       <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.targets'))" />
       <Error Condition="!Exists('packages\NUnit.3.14.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.14.0\build\NUnit.props'))" />
     </Target>
-    <Import Project="packages\xunit.core.2.6.2\build\xunit.core.targets" Condition="Exists('packages\xunit.core.2.6.2\build\xunit.core.targets')" />
     <Import Project="packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.targets" Condition="Exists('packages\Microsoft.CodeCoverage.17.8.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" />
     <Import Project="packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.targets" Condition="Exists('packages\Microsoft.NET.Test.Sdk.17.8.0\build\net462\Microsoft.NET.Test.Sdk.targets')" />
 </Project>

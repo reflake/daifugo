@@ -3,10 +3,10 @@
     open Card
     open Combination_Tests_Utils
     open Combination
-    open Xunit
+    open NUnit.Framework
     open FsUnit
     
-    [<Fact>]
+    [<Test>]
     let ``should find a pair combo`` () =
         
         let hand = [ a Four Of Hearts; an Eight Of Spades; a King Of Diamonds; a Four Of Diamonds; a Six Of Hearts ]
@@ -14,7 +14,7 @@
         
         findSets hand |> should equivalent expected
         
-    [<Fact>]
+    [<Test>]
     let ``should find a three of a kind combo`` () =
         
         let hand = [
