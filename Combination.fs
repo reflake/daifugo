@@ -4,17 +4,15 @@
     
     let findSets hand =
         
-        if hand |> List.contains (RegularCard( Four, Diamonds )) then
-            
-            [
-                RegularCard( Four, Diamonds );
-                RegularCard( Four, Hearts )
-            ]
+        let sameRank a b =
+            match a with
+            | RegularCard(a, _) ->
+                match b with
+                | RegularCard(b, _) -> a = b
+                | _ -> false
+            | Joker -> a = b
+                
+        let findCards elem = hand |> List.filter (sameRank elem)
+        let moreThanOne elem = (findCards elem) |> List.length > 1
         
-        else
-            
-            [
-                RegularCard( Eight, Spades );
-                RegularCard( Eight, Hearts );
-                RegularCard( Eight, Clubs );
-            ]
+        hand |> List.filter moreThanOne
