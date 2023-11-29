@@ -76,3 +76,19 @@
     let ``should find no combo`` (hand) =
         
         findSets hand |> should equalSeq list<Card>.Empty
+        
+    let wildCardCases =
+        [|
+            [ a Five Of Hearts; a Five Of Spades; Joker ]
+            
+            [ a Six Of Diamonds; Joker ]
+            
+            [ a Jack Of Clubs; a Jack Of Diamonds; a Jack Of Hearts; Joker ]
+            
+            [ a Two Of Clubs; Joker; Joker; a Two Of Spades ]
+        |]
+        
+    [<TestCaseSource ("wildCardCases")>]
+    let ``should find a wild card combo`` (sameCards) =
+        
+        findSets sameCards |> should equivalent sameCards

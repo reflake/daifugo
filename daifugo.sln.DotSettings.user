@@ -1,10 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=84a5983f_002Dff6d_002D435d_002Dbf94_002Dc332319f46e8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Testing" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::88F5FA60-8A52-4B26-86F4-2701DD54D535::.NETFramework,Version=v4.8::daifugo.tests.Testing&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ff5a23d0_002D8683_002D4a21_002D99b1_002Db47e47e0fc87/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Testing #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c51ac993_002Df0ad_002D491f_002D8f2a_002D2a870b1f91f4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="should find a wild card combo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::88F5FA60-8A52-4B26-86F4-2701DD54D535::.NETFramework,Version=v4.8::Combination_tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
