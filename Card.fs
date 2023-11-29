@@ -9,6 +9,8 @@ type Card = | RegularCard of Rank * Suit
                 match x with
                 | RegularCard(rank, suit) -> "a " + rank.ToString() + " of " + suit.ToString()
                 | Joker -> "a Joker"
+type Hand = Card list
+type Deck = Card list
 
 let cardValue card =
     
