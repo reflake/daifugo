@@ -80,7 +80,6 @@
         <Compile Include="AssemblyInfo.fs" />
         <Compile Include="Card.fs" />
         <Compile Include="Game.fs" />
-        <Compile Include="Tests.Utils.fs" />
         <Compile Include="Program.fs" />
         <Content Include="packages.config" />
     </ItemGroup>

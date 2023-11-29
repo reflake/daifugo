@@ -54,6 +54,14 @@
         <Compile Include="AssemblyInfo.fs" />
         <Content Include="packages.config" />
         <Compile Include="tests.fs" />
+        <Compile Include="Tests.Utils.fs" />
+        <Compile Include="Shuffle.Tests.fs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\daifugo.fsproj">
+        <Project>{88f5fa60-8a52-4b26-86f4-2701dd54d535}</Project>
+        <Name>daifugo</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
