@@ -1,6 +1,5 @@
-﻿module Combination_Tests_Utils
+﻿module Tests_Utils
 
-    open System
     open FSharp.Collections
     open Card
     
