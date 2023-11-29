@@ -12,3 +12,12 @@
         tuple
         |> Seq.map (fn cardRank)
         |> Seq.toList
+        
+    let areEquivalent a b =
+        let A = a |> List.sort
+        let B = b |> List.sort
+        
+        A = B
+        
+    let rearrangeByIndices indices list =
+        list |> List.mapi (fun i _ -> list |> List.item (indices |> List.item i))
