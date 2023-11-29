@@ -40,7 +40,4 @@ let sameRank a b =
         | _ -> false
     | Joker -> a = b
     
-let isWildCard c =
-    match c with
-    | RegularCard _ -> false
-    | Joker -> true
+let isWildCard = (=) Joker
