@@ -46,3 +46,17 @@ let defaultDeck: Deck = [ for suit in [Hearts; Diamonds; Clubs; Spades] do
                              for rank in [Two; Three; Four; Five; Six; Seven; Eight; Nine; Ten; Jack; Queen; King; Ace] ->
                                  RegularCard(rank, suit) ]
                         @ [ Joker; Joker ]
+                                     
+let shuffle random (cards : list<_>) =
+    
+    let shuffledCards = cards |> List.toArray
+    
+    for i in 0 .. cards.Length - 1 do
+        let j = random(i, cards.Length)
+        let tmp = shuffledCards.[i]
+    
+        // swap elements    
+        shuffledCards.[i] <- shuffledCards.[j]
+        shuffledCards.[j] <- tmp
+
+    shuffledCards |> Array.toList
