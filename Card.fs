@@ -41,3 +41,8 @@ let sameRank a b =
     | Joker -> a = b
     
 let isWildCard = (=) Joker
+
+let defaultDeck: Deck = [ for suit in [Hearts; Diamonds; Clubs; Spades] do
+                             for rank in [Two; Three; Four; Five; Six; Seven; Eight; Nine; Ten; Jack; Queen; King; Ace] ->
+                                 RegularCard(rank, suit) ]
+                        @ [ Joker; Joker ]
