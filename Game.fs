@@ -18,4 +18,5 @@
         CurrentPlayerIndex: int
         Table: TableState
         Revolution: bool
+        Deck: Deck
     }
