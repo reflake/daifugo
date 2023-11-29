@@ -19,5 +19,5 @@
         
         A = B
         
-    let rearrangeByIndices indices list =
-        list |> List.mapi (fun i _ -> list |> List.item (indices |> List.item i))
+    let rearrangeByIndices (indices : list<int>) list =
+        list |> List.mapi (fun i _ -> list |> List.item (indices.[i]))
