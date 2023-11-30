@@ -46,7 +46,7 @@
         if not (givenCards |> Set.ofList
                            |> Set.isSuperset ( trader |> hand |> Set.ofList ) ) then
             
-            invalidArg "givenCards" "player has no given cards"
+            invalidArg "givenCards" "player cannot give givenCards he doesn't have"
         
         ( { trader with Cards = trader.Cards |> List.except givenCards },
           { recipient with Cards = recipient.Cards |> List.append givenCards } )
