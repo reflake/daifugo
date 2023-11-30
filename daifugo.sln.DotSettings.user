@@ -12,5 +12,6 @@
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::tests.tests.should raise exception&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trade_tests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::score_tests.should add points to player&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::score_tests.should accumulate added player points&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
