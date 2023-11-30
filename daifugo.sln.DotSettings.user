@@ -8,5 +8,8 @@
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trade_tests.player 1 should trade a card with player 2&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trade_tests.player 1 should trade some cards with player 2&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trade_tests.player 2 should receive another card from player 1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trade_tests.raise an exception when player 1 trades cards he doesn't own&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::tests.tests.should raise exception&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trade_tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

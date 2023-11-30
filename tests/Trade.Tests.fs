@@ -35,4 +35,11 @@
         let (_, player2AfterTrade) = player1 |> trade [ a Nine Of Spades ] player2
         
         player2AfterTrade |> getHand |> should equivalent [ a Nine Of Spades; a Three Of Spades ]
+    
+    [<Test>]
+    let ``raise an exception when player 1 trades cards he doesn't own`` () =
         
+        let player1 = createPlayer |> give [ Joker ]
+        let player2 = createPlayer
+        
+        (fun () -> player1 |> trade [ an Three Of Clubs ] player2 |> ignore) |> should throw typeof<ArgumentException>

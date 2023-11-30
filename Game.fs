@@ -1,6 +1,5 @@
 ﻿module Game
 
-    open System
     open Card
 
     type PlayerPlace = int option
@@ -44,6 +43,12 @@
     
     let trade givenCards recipient trader =
         
+        if not (givenCards |> Set.ofList
+                           |> Set.isSuperset ( trader |> getHand |> Set.ofList ) ) then
+            
+            invalidArg "givenCards" "player has no given cards"
+        
         ( { trader with Cards = trader.Cards |> List.except givenCards },
           { recipient with Cards = recipient.Cards |> List.append givenCards } )
+            
         
