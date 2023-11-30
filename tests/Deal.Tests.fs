@@ -13,17 +13,26 @@
         a Seven Of Diamonds
     |]
     
+    let createPlayer = {
+                            Name = ""
+                            Cards = []
+                            Points = 0
+                            Place = None
+                        }
+    
     [<TestCaseSource("dealOneCardCases")>]
     let ``should deal a card`` (card) =
         
-        let player = {
-            Name = ""
-            Cards = []
-            Points = 0
-            Place = None
-        }
+        let player = createPlayer
         
-        (deal card player).Cards |> should equivalent [ card ]
+        deal [ card ] player |> getHand |> should equivalent [ card ]
+    
+    [<Test>]
+    let ``should deal two cards`` () =
         
+        let cards = the Four Of [Clubs; Diamonds]
+        let player = createPlayer
+        
+        deal cards player |> getHand |> should equivalent cards
         
 

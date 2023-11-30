@@ -22,8 +22,10 @@
     
     type Players = Player list
     
-    let deal card (player : Player) =
+    let deal cards (player : Player) =
         
-        let updatedCards = [ card ]
+        let updatedCards = cards
         
         { player with Cards = updatedCards }
+        
+    let getHand (player : Player) = player.Cards
