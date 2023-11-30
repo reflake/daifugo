@@ -14,9 +14,10 @@
     type TableState = Card list option
     
     type State = {
-        Players: Player list
         CurrentPlayerIndex: int
         Table: TableState
         Revolution: bool
         Deck: Deck
     }
+    
+    type Players = Player list
