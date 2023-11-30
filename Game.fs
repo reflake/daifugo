@@ -42,7 +42,7 @@
     
     let toggleRevolution state = { state with Revolution = not state.Revolution }
     
-    let trade cards receivingPlayer tradingPlayer =
+    let trade givenCards recipient trader =
         
-        ( { tradingPlayer with Cards = [] }, { receivingPlayer with Cards = cards } )
+        ( { trader with Cards = trader.Cards |> List.except givenCards }, { recipient with Cards = givenCards } )
         
