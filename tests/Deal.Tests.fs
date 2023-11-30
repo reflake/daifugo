@@ -13,9 +13,9 @@
         a Seven Of Diamonds
     |]
     
-    let createPlayer hand = {
+    let createPlayer = {
                             Name = ""
-                            Cards = hand
+                            Cards = []
                             Points = 0
                             Place = None
                         }
@@ -23,7 +23,7 @@
     [<TestCaseSource("dealOneCardCases")>]
     let ``should deal a card`` (card) =
         
-        let player = createPlayer []
+        let player = createPlayer
         
         deal [ card ] player |> getHand |> should equivalent [ card ]
     
@@ -31,7 +31,7 @@
     let ``should deal two cards`` () =
         
         let cards = the Four Of [Clubs; Diamonds]
-        let player = createPlayer []
+        let player = createPlayer
         
         deal cards player |> getHand |> should equivalent cards
     
@@ -39,7 +39,7 @@
     let ``should add two more cards to hand`` () =
         
         let cards = the Seven Of [Spades; Hearts]
-        let player = createPlayer [ a Five Of Diamonds; a Nine Of Clubs ]
+        let player = createPlayer |> give [ a Five Of Diamonds; a Nine Of Clubs ]
         let expectedHand = the Seven Of [Spades; Hearts] @
                            [ a Five Of Diamonds ; a Nine Of Clubs ]
 
