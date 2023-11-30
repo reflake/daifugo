@@ -24,7 +24,7 @@
     
     let deal cards (player : Player) =
         
-        let updatedCards = cards
+        let updatedCards = player.Cards @ cards
         
         { player with Cards = updatedCards }
         
