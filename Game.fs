@@ -39,4 +39,4 @@
         
     let give = deal
     
-    let toggleRevolution state = { state with Revolution = true }
+    let toggleRevolution state = { state with Revolution = not state.Revolution }
