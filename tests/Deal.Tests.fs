@@ -18,7 +18,7 @@
         
         let player = createPlayer
         
-        deal [ card ] player |> getHand |> should equivalent [ card ]
+        deal [ card ] player |> hand |> should equivalent [ card ]
     
     [<Test>]
     let ``should deal two cards`` () =
@@ -26,7 +26,7 @@
         let cards = the Four Of [Clubs; Diamonds]
         let player = createPlayer
         
-        deal cards player |> getHand |> should equivalent cards
+        deal cards player |> hand |> should equivalent cards
     
     [<Test>]
     let ``should add two more cards to hand`` () =
@@ -36,4 +36,4 @@
         let expectedHand = the Seven Of [Spades; Hearts] @
                            [ a Five Of Diamonds ; a Nine Of Clubs ]
 
-        deal cards player |> getHand |> should equivalent expectedHand
+        deal cards player |> hand |> should equivalent expectedHand

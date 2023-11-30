@@ -29,11 +29,11 @@
 
     type Players = Player list
         
-    let getHand (player : Player) = player.Cards
+    let hand (player : Player) = player.Cards
 
     let deal cards player =
         
-        let updatedCards = (player |> getHand) @ cards
+        let updatedCards = (player |> hand) @ cards
         
         { player with Cards = updatedCards }
         
@@ -44,7 +44,7 @@
     let trade givenCards recipient trader =
         
         if not (givenCards |> Set.ofList
-                           |> Set.isSuperset ( trader |> getHand |> Set.ofList ) ) then
+                           |> Set.isSuperset ( trader |> hand |> Set.ofList ) ) then
             
             invalidArg "givenCards" "player has no given cards"
         

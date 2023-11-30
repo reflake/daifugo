@@ -14,8 +14,8 @@
         let player2 = createPlayer
         let (player1AfterTrade, player2AfterTrade) = player1 |> trade [ an Ace Of Hearts ] player2
         
-        player1AfterTrade |> getHand |> should equivalent []
-        player2AfterTrade |> getHand |> should equivalent [ an Ace Of Hearts ]
+        player1AfterTrade |> hand |> should equivalent []
+        player2AfterTrade |> hand |> should equivalent [ an Ace Of Hearts ]
 
     [<Test>]
     let ``player 1 should trade some cards with player 2`` () =
@@ -24,8 +24,8 @@
         let player2 = createPlayer
         let (player1AfterTrade, player2AfterTrade) = player1 |> trade [ a Two Of Clubs; an Eight Of Diamonds ] player2
         
-        player1AfterTrade |> getHand |> should equivalent [ a Six Of Spades ]
-        player2AfterTrade |> getHand |> should equivalent [ a Two Of Clubs; an Eight Of Diamonds ]
+        player1AfterTrade |> hand |> should equivalent [ a Six Of Spades ]
+        player2AfterTrade |> hand |> should equivalent [ a Two Of Clubs; an Eight Of Diamonds ]
         
     [<Test>]
     let ``player 2 should receive another card from player 1`` () =
@@ -34,7 +34,7 @@
         let player2 = createPlayer |> give [ a Three Of Spades ]
         let (_, player2AfterTrade) = player1 |> trade [ a Nine Of Spades ] player2
         
-        player2AfterTrade |> getHand |> should equivalent [ a Nine Of Spades; a Three Of Spades ]
+        player2AfterTrade |> hand |> should equivalent [ a Nine Of Spades; a Three Of Spades ]
     
     [<Test>]
     let ``raise an exception when player 1 trades cards he doesn't own`` () =
