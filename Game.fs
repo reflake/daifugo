@@ -21,3 +21,9 @@
     }
     
     type Players = Player list
+    
+    let deal card (player : Player) =
+        
+        let updatedCards = [ RegularCard(King, Hearts) ]
+        
+        { player with Cards = updatedCards }

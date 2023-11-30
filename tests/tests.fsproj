@@ -55,6 +55,7 @@
         <Content Include="packages.config" />
         <Compile Include="tests.fs" />
         <Compile Include="Tests.Utils.fs" />
+        <Compile Include="Deal.Tests.fs" />
         <Compile Include="Shuffle.Tests.fs" />
     </ItemGroup>
     <ItemGroup>
