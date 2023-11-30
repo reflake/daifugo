@@ -1,9 +1,6 @@
 ﻿module revolution_tests
 
-    open Card
     open Game
-    open NUnit.Framework.Internal
-    open Tests_Utils
     open NUnit.Framework
     open FsUnit
     
