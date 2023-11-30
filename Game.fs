@@ -1,5 +1,6 @@
 ﻿module Game
 
+    open System
     open Card
 
     type PlayerPlace = int option
@@ -50,5 +51,3 @@
         
         ( { trader with Cards = trader.Cards |> List.except givenCards },
           { recipient with Cards = recipient.Cards |> List.append givenCards } )
-            
-        
