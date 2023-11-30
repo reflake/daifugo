@@ -2,5 +2,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c51ac993_002Df0ad_002D491f_002D8f2a_002D2a870b1f91f4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="should find a wild card combo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::deal_tests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::revolution_tests.should toggle revolution ON&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

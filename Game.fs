@@ -19,6 +19,13 @@
         Revolution: bool
         Deck: Deck
     }
+    
+    let newGameState = {
+        CurrentPlayerIndex = 0
+        Table = None
+        Revolution = false
+        Deck = []
+    }
 
     type Players = Player list
         
@@ -29,4 +36,7 @@
         let updatedCards = (player |> getHand) @ cards
         
         { player with Cards = updatedCards }
+        
     let give = deal
+    
+    let toggleRevolution state = { state with Revolution = true }
