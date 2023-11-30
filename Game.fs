@@ -24,6 +24,6 @@
     
     let deal card (player : Player) =
         
-        let updatedCards = [ RegularCard(King, Hearts) ]
+        let updatedCards = [ card ]
         
         { player with Cards = updatedCards }

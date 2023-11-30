@@ -8,6 +8,9 @@
     
     let dealOneCardCases = [|
         a King Of Hearts
+        a Two Of Clubs
+        Joker
+        a Seven Of Diamonds
     |]
     
     [<TestCaseSource("dealOneCardCases")>]
