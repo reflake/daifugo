@@ -44,5 +44,6 @@
     
     let trade givenCards recipient trader =
         
-        ( { trader with Cards = trader.Cards |> List.except givenCards }, { recipient with Cards = givenCards } )
+        ( { trader with Cards = trader.Cards |> List.except givenCards },
+          { recipient with Cards = recipient.Cards |> List.append givenCards } )
         
