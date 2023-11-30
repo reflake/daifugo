@@ -11,7 +11,7 @@
     let ``should toggle revolution ON`` () =
         
         let gameState = newGameState
-        let expectedGameState = { newGameState with Revolution = true }
+        let expectedGameState = { gameState with Revolution = true }
     
         gameState |> toggleRevolution |> should equal expectedGameState
     
