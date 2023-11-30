@@ -13,13 +13,6 @@
         a Seven Of Diamonds
     |]
     
-    let createPlayer = {
-                            Name = ""
-                            Cards = []
-                            Points = 0
-                            Place = None
-                        }
-    
     [<TestCaseSource("dealOneCardCases")>]
     let ``should deal a card`` (card) =
         

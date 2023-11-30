@@ -58,6 +58,7 @@
         <Compile Include="Deal.Tests.fs" />
         <Compile Include="Shuffle.Tests.fs" />
         <Compile Include="Revolution.Tests.fs" />
+        <Compile Include="Trade.Tests.fs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\daifugo.fsproj">

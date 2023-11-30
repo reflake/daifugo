@@ -1,5 +1,6 @@
 ﻿module Game
 
+    open System
     open Card
 
     type PlayerPlace = int option
@@ -40,3 +41,8 @@
     let give = deal
     
     let toggleRevolution state = { state with Revolution = not state.Revolution }
+    
+    let trade cards receivingPlayer tradingPlayer =
+        
+        ( { tradingPlayer with Cards = [] }, { receivingPlayer with Cards = cards } )
+        

@@ -2,6 +2,7 @@
 
     open FSharp.Collections
     open Card
+    open Game
     
     type cardProducer = Rank -> Suit -> Card
     
@@ -21,3 +22,10 @@
         
     let rearrangeByIndices (indices : list<int>) list =
         list |> List.mapi (fun i _ -> list |> List.item (indices.[i]))
+        
+    let createPlayer = {
+                            Name = ""
+                            Cards = []
+                            Points = 0
+                            Place = None
+                        }
