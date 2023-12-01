@@ -10,11 +10,15 @@
         
         let (|First|Second|Middle|PreLast|Last|) =
                
+               let threePlayers = numberOfPlayers = 3
+               let preLastPlace = numberOfPlayers - 2
+               let lastPlace = numberOfPlayers - 1
+               
                function
                | Some(0) -> First
-               | Some(1) when numberOfPlayers > 3 -> Second
-               | Some(place) when numberOfPlayers > 3 && place = numberOfPlayers - 2 -> PreLast
-               | Some(place) when place = numberOfPlayers - 1 -> Last
+               | Some(1) when not threePlayers -> Second
+               | Some(place) when not threePlayers && place = preLastPlace -> PreLast
+               | Some(place) when place = lastPlace -> Last
                | _ -> Middle
         
         match place with
