@@ -1,11 +1,13 @@
 ﻿module Ranking
 
-    open System
-
     type Title = | Tycoon
                  | Rich
                  | Commoner
                  | Poor
                  | Beggar
     
-    let nextTitle a b = Beggar
+    let getTitle numberOfPlayers place =
+        match place with
+        | Some(number) -> match number with
+                         | 0 -> Tycoon
+                         | 2 -> Beggar

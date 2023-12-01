@@ -14,11 +14,10 @@
     
     let testCases = [|
         { Place = Some(2); NumberOfPlayers = 3; ExpectedTitle = Beggar }
+        { Place = Some(0); NumberOfPlayers = 4; ExpectedTitle = Tycoon }
     |]
     
     [<TestCaseSource("testCases")>]
-    let ``should return title when player takes place`` (testCase) =
+    let ``should return title for place`` (testCase) =
         
-        let player = { createPlayer with Place = testCase.Place }
-    
-        player |> nextTitle testCase.NumberOfPlayers |> should equal testCase.ExpectedTitle
+        getTitle testCase.NumberOfPlayers testCase.Place |> should equal testCase.ExpectedTitle
