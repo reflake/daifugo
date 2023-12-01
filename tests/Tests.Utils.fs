@@ -3,6 +3,7 @@
     open FSharp.Collections
     open Card
     open Game
+    open Ranking
     
     type cardProducer = Rank -> Suit -> Card
     
@@ -28,4 +29,5 @@
                             Cards = []
                             Points = 0
                             Place = None
+                            Title = Commoner
                         }

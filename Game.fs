@@ -1,6 +1,6 @@
 ﻿module Game
 
-    open System
+    open Ranking
     open Card
 
     type PlayerPlace = int option
@@ -10,6 +10,7 @@
         Cards: Hand
         Points: int
         Place: PlayerPlace
+        Title: Title
     }
 
     type TableState = Card list option
