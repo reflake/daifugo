@@ -18,6 +18,9 @@
         { Place = Some(1); NumberOfPlayers = 5; ExpectedTitle = Rich }
         { Place = Some(1); NumberOfPlayers = 3; ExpectedTitle = Commoner }
         { Place = Some(2); NumberOfPlayers = 4; ExpectedTitle = Poor }
+        { Place = Some(17); NumberOfPlayers = 18; ExpectedTitle = Beggar }
+        { Place = Some(16); NumberOfPlayers = 18; ExpectedTitle = Poor }
+        { Place = Some(4); NumberOfPlayers = 7; ExpectedTitle = Commoner }
     |]
     
     [<TestCaseSource("testCases")>]

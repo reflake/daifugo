@@ -7,11 +7,19 @@
                  | Beggar
     
     let getTitle numberOfPlayers place =
+        
+        let (|First|Second|Middle|PreLast|Last|) =
+               
+               function
+               | Some(0) -> First
+               | Some(1) when numberOfPlayers > 3 -> Second
+               | Some(place) when numberOfPlayers > 3 && place = numberOfPlayers - 2 -> PreLast
+               | Some(place) when place = numberOfPlayers - 1 -> Last
+               | _ -> Middle
+        
         match place with
-        | Some(number) -> match number with
-                         | 0 -> Tycoon
-                         | 1 when numberOfPlayers > 3 -> Rich
-                         | 1 -> Commoner
-                         | 2 when numberOfPlayers = 4 -> Poor
-                         | 2 when numberOfPlayers > 4 -> Commoner
-                         | 2 when numberOfPlayers < 4 -> Beggar
+        | First -> Tycoon
+        | Second -> Rich
+        | Middle -> Commoner
+        | PreLast -> Poor
+        | Last -> Beggar
