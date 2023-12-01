@@ -16,5 +16,6 @@
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::score_tests.should calculate earned points when player takes place&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::score_tests.should raise exception when calculate player's earned points who didn't take place&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::ranking_tests.should return title when player takes place&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::ranking_tests.should return title for place&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

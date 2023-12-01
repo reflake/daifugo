@@ -2,7 +2,6 @@
 
     open Ranking
     open Game
-    open Tests_Utils
     open FsUnit
     open NUnit.Framework
     
@@ -15,6 +14,7 @@
     let testCases = [|
         { Place = Some(2); NumberOfPlayers = 3; ExpectedTitle = Beggar }
         { Place = Some(0); NumberOfPlayers = 4; ExpectedTitle = Tycoon }
+        { Place = Some(2); NumberOfPlayers = 5; ExpectedTitle = Commoner }
     |]
     
     [<TestCaseSource("testCases")>]
