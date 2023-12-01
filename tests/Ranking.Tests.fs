@@ -17,6 +17,7 @@
         { Place = Some(2); NumberOfPlayers = 5; ExpectedTitle = Commoner }
         { Place = Some(1); NumberOfPlayers = 5; ExpectedTitle = Rich }
         { Place = Some(1); NumberOfPlayers = 3; ExpectedTitle = Commoner }
+        { Place = Some(2); NumberOfPlayers = 4; ExpectedTitle = Poor }
     |]
     
     [<TestCaseSource("testCases")>]
