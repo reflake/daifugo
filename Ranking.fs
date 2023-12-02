@@ -22,6 +22,7 @@
                 | place when not threePlayers && place = preLastPlace -> PreLast
                 | place when place = lastPlace -> Last
                 | _ -> Middle
+            | None -> invalidArg "place" "place should be Some(int)"
         
         match place with
         | First -> Tycoon

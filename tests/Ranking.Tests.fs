@@ -1,5 +1,6 @@
 ﻿module ranking_tests
 
+    open System
     open Ranking
     open Game
     open FsUnit
@@ -27,3 +28,8 @@
     let ``should return title for place`` (testCase) =
         
         getTitle testCase.NumberOfPlayers testCase.Place |> should equal testCase.ExpectedTitle
+        
+    [<Test>]
+    let ``should throw when place is not taken`` () =
+        
+        (fun () -> getTitle 5 None |> ignore) |> should throw typeof<ArgumentException>
