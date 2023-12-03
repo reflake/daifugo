@@ -25,7 +25,7 @@
         list |> List.mapi (fun i _ -> list |> List.item (indices.[i]))
         
     let createPlayer = {
-                            Name = ""
+                            Id = ""
                             Cards = []
                             Points = 0
                             Place = None

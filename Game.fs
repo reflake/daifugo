@@ -5,13 +5,15 @@
 
     type PlayerPlace = int option
 
-    type Player = {
-        Name: string
+    type Player<'identifier> = {
+        Id: 'identifier
         Cards: Hand
         Points: int
         Place: PlayerPlace
         Title: Title
     }
+
+    type Players<'identifier> = Player<'identifier> list
 
     type TableState = Card list option
 
@@ -28,10 +30,8 @@
         Revolution = false
         Deck = []
     }
-
-    type Players = Player list
         
-    let hand (player : Player) = player.Cards
+    let hand (player : Player<'a>) = player.Cards
 
     let deal cards player =
         
