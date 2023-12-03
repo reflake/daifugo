@@ -41,8 +41,6 @@
         
     let give = deal
     
-    let toggleRevolution state = { state with Revolution = not state.Revolution }
-    
     let trade givenCards recipient trader =
         
         if not (givenCards |> Set.ofList
@@ -52,3 +50,5 @@
         
         ( { trader with Cards = trader.Cards |> List.except givenCards },
           { recipient with Cards = recipient.Cards |> List.append givenCards } )
+    
+    let toggleRevolution state = { state with Revolution = not state.Revolution }
