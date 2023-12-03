@@ -81,6 +81,7 @@
         <Compile Include="Card.fs" />
         <Compile Include="Ranking.fs" />
         <Compile Include="Game.fs" />
+        <Compile Include="Trick.fs" />
         <Compile Include="Score.fs" />
         <Compile Include="Program.fs" />
         <Content Include="packages.config" />
