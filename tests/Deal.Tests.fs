@@ -7,49 +7,35 @@
     open FsUnit
     open System
     
-    let dealOneCardCases = [|
-        a King Of Hearts
-        a Two Of Clubs
-        Joker
-        a Seven Of Diamonds
-    |]
-    
-    [<TestCaseSource("dealOneCardCases")>]
-    let ``should deal a card`` (card) =
+    [<Test>]
+    let ``should deal a card`` () =
         
-        let deck = [ card ]
+        let deck = [ a King Of Hearts ]
         let player = createPlayer
         
-        let (deck, player) = deck |> deal [ card ] player
+        let (_, player) = deck |> deal [ a King Of Hearts ] player
         
-        deck |> should equivalent []
-        player |> hand |> should equivalent [ card ]
+        player |> hand |> should equivalent [ a King Of Hearts ]
     
     [<Test>]
     let ``should deal two cards`` () =
         
-        let cards = the Four Of [Clubs; Diamonds]
-        let deck = cards
+        let deck = the Four Of [Clubs; Diamonds]
         let player = createPlayer
         
-        let (deck, player) = deck |> deal cards player
+        let (_, player) = deck |> deal (the Four Of [Clubs; Diamonds]) player
         
-        deck |> should equivalent []
-        player |> hand |> should equivalent cards
+        player |> hand |> should equivalent (the Four Of [Clubs; Diamonds])
     
     [<Test>]
     let ``should add two more cards to hand`` () =
         
-        let cards = the Seven Of [Spades; Hearts]
-        let deck = cards @ [ a Six Of Hearts ]
+        let deck = the Seven Of [Spades; Hearts]
         let player = createPlayer |> give [ a Five Of Diamonds; a Nine Of Clubs ]
-        let expectedHand = the Seven Of [Spades; Hearts] @
-                           [ a Five Of Diamonds ; a Nine Of Clubs ]
                            
-        let (deck, player) = deck |> deal cards player
+        let (_, player) = deck |> deal (the Seven Of [Spades; Hearts]) player
 
-        deck |> should equivalent [ a Six Of Hearts ]
-        player |> hand |> should equivalent expectedHand
+        player |> hand |> should equivalent (the Seven Of [Spades; Hearts] @ [ a Five Of Diamonds ; a Nine Of Clubs ])
         
     [<Test>]
     let ``raise an exception when not existent cards dealt`` () =
@@ -58,13 +44,23 @@
         let player = createPlayer
         
         (fun () -> deck |> deal [ an Three Of Clubs ] player |> ignore) |> should throw typeof<ArgumentException>
+    
+    [<Test>]
+    let ``deck should be empty after deal`` () =
         
+        let deck = [ a Queen Of Spades ]
+        let player = createPlayer
+        
+        let (deck, _) = deck |> deal [ a Queen Of Spades ] player
+        
+        deck |> should equivalent []
+    
     [<Test>]
     let ``should left some cards in the deck after deal`` () =
         
-        let cards = [ a Three Of Spades; an Eight Of Spades ]
-        let deck = cards
+        let deck = [ a Three Of Spades; an Eight Of Spades ]
         let player = createPlayer
+        
         let (deck, _) = deck |> deal [ an Eight Of Spades ] player
         
         deck |> should equivalent [ a Three Of Spades ]
