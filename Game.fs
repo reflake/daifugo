@@ -38,25 +38,32 @@
         let updatedCards = (player |> hand) @ cards
         
         { player with Cards = updatedCards }
-    
-    let trade givenCards recipient trader =
         
-        if not (givenCards |> Set.ofList
-                           |> Set.isSuperset ( trader |> hand |> Set.ofList ) ) then
+    let swap cards destination source =
+        
+        // check if source list has cards that are going to be dealt
+        if not (cards |> Set.ofList
+                      |> Set.isSuperset ( source |> Set.ofList ) ) then
             
-            invalidArg "givenCards" "player cannot give givenCards he doesn't have"
+            Error "No cards"
+        else
+            Ok ( source |> List.except cards, destination |> List.append cards )
+            
+    
+    let trade cards recipient trader =
         
-        ( { trader with Cards = trader.Cards |> List.except givenCards },
-          { recipient with Cards = recipient.Cards |> List.append givenCards } )
+        match trader.Cards |> swap cards recipient.Cards with
+        | Error _ -> invalidArg "cards" "Trading player cannot give cards he doesn't have"
+        | Ok (traderCards, recipientCards) -> 
+                    ( { trader with Cards = traderCards },
+                      { recipient with Cards = recipientCards } )
 
     let deal cards player (deck : Deck) =
         
-        if not (cards |> Set.ofList
-                      |> Set.isSuperset ( deck |> Set.ofList ) ) then
-            
-            invalidArg "cards" "cannot deal cards deck doesn't contain"
-        
-        ( deck |> List.except cards,
-          { player with Cards = player.Cards |> List.append cards } )
+        match deck |> swap cards player.Cards with
+        | Error _ -> invalidArg "cards" "cannot deal cards deck doesn't contain"
+        | Ok (deckCards, playerCards) ->
+                    ( deckCards,
+                      { player with Cards = playerCards } )
     
     let toggleRevolution state = { state with Revolution = not state.Revolution }
