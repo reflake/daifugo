@@ -32,14 +32,12 @@
     }
         
     let hand (player : Player<'a>) = player.Cards
-
-    let deal cards player =
+        
+    let give cards player =
         
         let updatedCards = (player |> hand) @ cards
         
         { player with Cards = updatedCards }
-        
-    let give = deal
     
     let trade givenCards recipient trader =
         
@@ -50,5 +48,15 @@
         
         ( { trader with Cards = trader.Cards |> List.except givenCards },
           { recipient with Cards = recipient.Cards |> List.append givenCards } )
+
+    let deal cards player (deck : Deck) =
+        
+        if not (cards |> Set.ofList
+                      |> Set.isSuperset ( deck |> Set.ofList ) ) then
+            
+            invalidArg "cards" "cannot deal cards deck doesn't contain"
+        
+        ( deck |> List.except cards,
+          { player with Cards = player.Cards |> List.append cards } )
     
     let toggleRevolution state = { state with Revolution = not state.Revolution }
