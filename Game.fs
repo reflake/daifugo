@@ -32,6 +32,8 @@
     }
         
     let hand (player : Player<'a>) = player.Cards
+    
+    let setHand cards player= { player with Cards = cards }
         
     let give cards player =
         
@@ -53,17 +55,15 @@
     let trade cards recipient trader =
         
         match trader.Cards |> swap cards recipient.Cards with
-        | Error _ -> invalidArg "cards" "Trading player cannot give cards he doesn't have"
-        | Ok (traderCards, recipientCards) -> 
-                    ( { trader with Cards = traderCards },
-                      { recipient with Cards = recipientCards } )
+        | Error "No cards" -> invalidArg "cards" "Trading player cannot give cards he doesn't have"
+        | Ok (traderCards, recipientCards) -> ( trader |> setHand traderCards, recipient |> setHand recipientCards )
+        | _ -> failwith "Unexpected exception"
 
     let deal cards player (deck : Deck) =
         
         match deck |> swap cards player.Cards with
-        | Error _ -> invalidArg "cards" "cannot deal cards deck doesn't contain"
-        | Ok (deckCards, playerCards) ->
-                    ( deckCards,
-                      { player with Cards = playerCards } )
+        | Error "No cards" -> invalidArg "cards" "Cannot deal cards deck doesn't contain"
+        | Ok (deckCards, playerCards) -> ( deckCards, player |> setHand playerCards )
+        | _ -> failwith "Unexpected exception"
     
     let toggleRevolution state = { state with Revolution = not state.Revolution }

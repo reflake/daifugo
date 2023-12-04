@@ -1,6 +1,8 @@
 ﻿module Trick
 
+    open System
     open Card
+    open Game
     
     let cardValue card =
         
@@ -21,3 +23,5 @@
             | Five -> 5
             | Four -> 4
             | Three -> 3
+            
+    let hit cards state = { state with Table = Some( [ RegularCard(Seven, Clubs) ] ) }
