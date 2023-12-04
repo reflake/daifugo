@@ -58,3 +58,13 @@
         let player = createPlayer
         
         (fun () -> deck |> deal [ an Three Of Clubs ] player |> ignore) |> should throw typeof<ArgumentException>
+        
+    [<Test>]
+    let ``should left some cards in the deck after deal`` () =
+        
+        let cards = [ a Three Of Spades; an Eight Of Spades ]
+        let deck = cards
+        let player = createPlayer
+        let (deck, _) = deck |> deal [ an Eight Of Spades ] player
+        
+        deck |> should equivalent [ a Three Of Spades ]
