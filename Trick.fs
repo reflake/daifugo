@@ -1,7 +1,7 @@
 ﻿module Trick
 
-    open System
     open Card
+    open Player
     open Game
     
     let cardValue card =

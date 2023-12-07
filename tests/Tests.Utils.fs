@@ -2,8 +2,8 @@
 
     open FSharp.Collections
     open Card
-    open Game
     open Ranking
+    open Player
     
     type cardProducer = Rank -> Suit -> Card
     

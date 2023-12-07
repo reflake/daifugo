@@ -1,6 +1,6 @@
 ﻿module Score
 
-    open Game
+    open Player
     
     let addPoints amount player = { player with Points = player.Points + amount }
     

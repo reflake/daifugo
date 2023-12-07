@@ -2,12 +2,12 @@
 
     open System
     open Ranking
-    open Game
+    open Player
     open FsUnit
     open NUnit.Framework
     
     type TestCase = {
-        Place : PlayerPlace
+        Place : Place
         NumberOfPlayers : int
         ExpectedTitle : Title
     }

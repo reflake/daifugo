@@ -1,7 +1,7 @@
 ﻿module deal_tests
 
     open Card
-    open Game
+    open Player
     open NUnit.Framework
     open Tests_Utils
     open FsUnit

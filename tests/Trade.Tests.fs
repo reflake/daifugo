@@ -2,7 +2,7 @@
 
     open System
     open Card
-    open Game
+    open Player
     open Tests_Utils
     open NUnit.Framework
     open FsUnit

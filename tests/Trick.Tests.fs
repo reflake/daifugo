@@ -3,6 +3,7 @@
     open Card
     open Game
     open Trick
+    open Player
     open FsUnit
     open NUnit.Framework
     open Tests_Utils

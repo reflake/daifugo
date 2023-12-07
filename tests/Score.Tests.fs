@@ -1,7 +1,6 @@
 ﻿module score_tests
 
     open System
-    open Game
     open Score
     open NUnit.Framework
     open FsUnit

@@ -40,3 +40,13 @@
             shuffledCards.[j] <- tmp
 
         shuffledCards |> Array.toList
+        
+    let swap cards destination source =
+        
+        // check if source list has cards that are going to be dealt
+        if not (cards |> Set.ofList
+                      |> Set.isSuperset ( source |> Set.ofList ) ) then
+            
+            Error "No cards"
+        else
+            Ok ( source |> List.except cards, destination |> List.append cards )
