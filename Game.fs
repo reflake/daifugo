@@ -15,18 +15,22 @@
 
     type Players<'identifier> = Player<'identifier> list
 
-    type TableState = Card list option
+    type Table = Card list list
+    
+    let placeOnTop cards = List.append [ cards ]
+        
+    let top = List.head
 
     type State = {
         CurrentPlayerIndex: int
-        Table: TableState
+        Table: Table
         Revolution: bool
         Deck: Deck
     }
     
     let newGameState = {
         CurrentPlayerIndex = 0
-        Table = None
+        Table = []
         Revolution = false
         Deck = []
     }

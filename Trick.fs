@@ -24,4 +24,8 @@
             | Four -> 4
             | Three -> 3
             
-    let hit cards state = { state with Table = Some( [ RegularCard(Seven, Clubs) ] ) }
+    let hit table cards player =
+        match player |> hand |> swap cards [] with
+        | Error "No cards" -> invalidArg "cards" "Player cannot hit with cards he doesn't own"
+        | Ok ( playerCards, topCards ) -> ( player |> setHand playerCards, table |> placeOnTop topCards )
+        | _ -> failwith "Unexpected exception"
