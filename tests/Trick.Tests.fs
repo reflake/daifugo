@@ -50,7 +50,7 @@ module ``Hit table`` =
 module ``Same Rank`` =
 
     [<Test>]
-    let ``two cards should be same rank`` () =
+    let ``two cards should be fives of same rank`` () =
         
         let cards = [ a Five Of Clubs; a Five Of Diamonds ]
         

@@ -30,16 +30,25 @@
         | Error "No cards" -> invalidArg "cards" "Player cannot hit with cards he doesn't own"
         | Ok ( playerCards, topCards ) -> ( player |> setHand playerCards, table |> placeOnTop topCards )
         | _ -> failwith "Unexpected exception"
-        
+    
     let areSameRank cards =
+
+        let sameRank (a, b) = a = b
+                
         match cards with
         | [_] -> false
-        | head::tail -> tail |> List.forall (sameRank head)
         | [] -> raise (ArgumentException "cards should not be empty")
+        | cards -> cards
+                   |> List.map cardValue
+                   |> List.pairwise
+                   |> List.forall sameRank
         
     let areStraight cards =
+        
+        let isSuccessor (a, b) = a + 1 = b
+        
         cards
         |> List.map cardValue
         |> List.sort
         |> List.pairwise
-        |> List.forall (fun (a, b) -> a + 1 = b)
+        |> List.forall isSuccessor
