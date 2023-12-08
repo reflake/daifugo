@@ -1,7 +1,7 @@
 ﻿module trick_tests
 
     open Card
-    open Game
+    open Table
     open Trick
     open Player
     open FsUnit

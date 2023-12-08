@@ -2,7 +2,7 @@
 
     open Card
     open Player
-    open Game
+    open Table
     
     let cardValue card =
         
