@@ -43,3 +43,17 @@
             [ a Five Of Clubs; an Eight Of Clubs ]
             [ a Jack Of Diamonds ]
         ]
+        
+    [<Test>]
+    let ``two cards should be same rank`` () =
+        
+        let cards = [ a Five Of Clubs; a Five Of Diamonds ]
+        
+        cards |> areSameRank |> should equal true
+        
+    [<Test>]
+    let ``two cards should not be same rank`` () =
+        
+        let cards = [ a Nine Of Hearts; a Three Of Hearts ]
+        
+        cards |> areSameRank |> should equal false

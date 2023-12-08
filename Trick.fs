@@ -1,5 +1,6 @@
 ﻿module Trick
 
+    open System
     open Card
     open Player
     open Table
@@ -29,3 +30,5 @@
         | Error "No cards" -> invalidArg "cards" "Player cannot hit with cards he doesn't own"
         | Ok ( playerCards, topCards ) -> ( player |> setHand playerCards, table |> placeOnTop topCards )
         | _ -> failwith "Unexpected exception"
+        
+    let areSameRank cards = cards |> List.head |> sameRank (cards |> List.last)
