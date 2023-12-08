@@ -37,4 +37,9 @@
         | head::tail -> tail |> List.forall (sameRank head)
         | [] -> raise (ArgumentException "cards should not be empty")
         
-    let areStraight cards = true
+    let areStraight cards =
+        cards
+        |> List.map cardValue
+        |> List.sort
+        |> List.pairwise
+        |> List.forall (fun (a, b) -> a + 1 = b)

@@ -19,7 +19,7 @@
             | RegularCard(b, _) -> a = b
             | _ -> false
         | Joker -> a = b
-        
+    
     let isWildCard = (=) Joker
 
     let defaultDeck: Deck = [ for suit in [Hearts; Diamonds; Clubs; Spades] do

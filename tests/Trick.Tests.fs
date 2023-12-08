@@ -84,3 +84,17 @@
         let cards = [ a Three Of Hearts; a Four Of Clubs; a Five Of Diamonds ]
         
         cards |> areStraight |> should equal true
+        
+    [<Test>]
+    let ``three cards should not be straight`` () =
+        
+        let cards = [ a Jack Of Spades; a Nine Of Hearts; a Nine Of Spades ]
+        
+        cards |> areStraight |> should equal false
+        
+    [<Test>]
+    let ``four cards should be straight`` () =
+        
+        let cards = [ a Ten Of Spades; a Jack Of Spades; a Queen Of Hearts; a King Of Hearts ]
+        
+        cards |> areStraight |> should equal true
