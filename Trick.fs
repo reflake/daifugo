@@ -5,25 +5,29 @@
     open Player
     open Table
     
+    type Value =
+        | Wild
+        | Concrete of int
+    
     let cardValue card =
         
         match card with
-        | Joker -> 16
-        | RegularCard (Two, _) -> 15
+        | Joker -> Wild
+        | RegularCard (Two, _) -> Concrete 15
         | RegularCard (rank, _) ->
             match rank with
-            | Ace -> 14
-            | King -> 13
-            | Queen -> 12
-            | Jack -> 11
-            | Ten -> 10
-            | Nine -> 9
-            | Eight -> 8
-            | Seven -> 7
-            | Six -> 6
-            | Five -> 5
-            | Four -> 4
-            | Three -> 3
+            | Ace -> Concrete 14
+            | King -> Concrete 13
+            | Queen -> Concrete 12
+            | Jack -> Concrete 11
+            | Ten -> Concrete 10
+            | Nine -> Concrete 9
+            | Eight -> Concrete 8
+            | Seven -> Concrete 7
+            | Six -> Concrete 6
+            | Five -> Concrete 5
+            | Four -> Concrete 4
+            | Three -> Concrete 3
             
     let hit table cards player =
         match player |> hand |> swap cards [] with
@@ -33,7 +37,11 @@
     
     let areSameRank cards =
 
-        let sameRank (a, b) = a = b
+        let sameRank (a, b) =
+            match (a, b) with
+            | (Concrete a, Concrete b) -> a = b
+            | (_, Wild) -> true
+            | (Wild, _) -> true
                 
         match cards with
         | [_] -> false
@@ -45,7 +53,9 @@
         
     let areStraight cards =
         
-        let isSuccessor (a, b) = a + 1 = b
+        let isSuccessor (a, b) =
+            match (a, b) with
+            | ( Concrete a, Concrete b ) -> a + 1 = b
         
         cards
         |> List.map cardValue

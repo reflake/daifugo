@@ -81,6 +81,13 @@ module ``Same Rank`` =
     let ``no cards should raise exception`` () =
         
         (fun () -> [] |> areSameRank |> ignore) |> should throw typeof<ArgumentException>
+        
+    [<Test>]
+    let ``wild card should be counted as same rank`` () =
+        
+        let cards = [ Joker; an Eight Of Hearts ]
+        
+        cards |> areSameRank |> should equal true
 
 module Straights =
 
