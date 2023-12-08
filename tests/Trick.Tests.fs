@@ -1,14 +1,16 @@
 ﻿module trick_tests
 
-    open System
-    open Card
-    open Table
-    open Trick
-    open Player
-    open FsUnit
-    open NUnit.Framework
-    open Tests_Utils
-    
+open System
+open Card
+open Table
+open Trick
+open Player
+open FsUnit
+open NUnit.Framework
+open Tests_Utils
+
+module ``Hit table`` =
+
     [<Test>]
     let ``should hit empty table with a card`` () =
         
@@ -44,7 +46,9 @@
             [ a Five Of Clubs; an Eight Of Clubs ]
             [ a Jack Of Diamonds ]
         ]
-        
+
+module ``Same Rank`` =
+
     [<Test>]
     let ``two cards should be same rank`` () =
         
@@ -77,7 +81,9 @@
     let ``no cards should raise exception`` () =
         
         (fun () -> [] |> areSameRank |> ignore) |> should throw typeof<ArgumentException>
-        
+
+module Straights =
+
     [<Test>]
     let ``three cards should be straight`` () =
         
