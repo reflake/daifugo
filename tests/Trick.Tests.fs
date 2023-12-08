@@ -77,3 +77,10 @@
     let ``no cards should raise exception`` () =
         
         (fun () -> [] |> areSameRank |> ignore) |> should throw typeof<ArgumentException>
+        
+    [<Test>]
+    let ``three cards should be straight`` () =
+        
+        let cards = [ a Three Of Hearts; a Four Of Clubs; a Five Of Diamonds ]
+        
+        cards |> areStraight |> should equal true

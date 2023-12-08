@@ -7,6 +7,7 @@
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests.three cards should not be same rank&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests.single card should not be same rank&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests.no cards should raise exception&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests.three cards should be straight&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c51ac993_002Df0ad_002D491f_002D8f2a_002D2a870b1f91f4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="should find a wild card combo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

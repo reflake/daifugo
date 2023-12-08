@@ -36,3 +36,5 @@
         | [_] -> false
         | head::tail -> tail |> List.forall (sameRank head)
         | [] -> raise (ArgumentException "cards should not be empty")
+        
+    let areStraight cards = true
