@@ -1,5 +1,6 @@
 ﻿module trick_tests
 
+    open System
     open Card
     open Table
     open Trick
@@ -57,3 +58,22 @@
         let cards = [ a Nine Of Hearts; a Three Of Hearts ]
         
         cards |> areSameRank |> should equal false
+        
+    [<Test>]
+    let ``three cards should not be same rank`` () =
+        
+        let cards = [ a Jack Of Hearts; a Queen Of Hearts; a Jack Of Spades ]
+        
+        cards |> areSameRank |> should equal false
+    
+    [<Test>]
+    let ``single card should not be same rank`` () =
+        
+        let cards = [ an Ace Of Spades ]
+        
+        cards |> areSameRank |> should equal false
+        
+    [<Test>]
+    let ``no cards should raise exception`` () =
+        
+        (fun () -> [] |> areSameRank |> ignore) |> should throw typeof<ArgumentException>
