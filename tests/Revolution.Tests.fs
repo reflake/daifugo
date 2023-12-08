@@ -8,14 +8,18 @@
     let ``should toggle revolution ON`` () =
         
         let gameState = newGameState
-        let expectedGameState = { gameState with Revolution = true }
     
-        gameState |> toggleRevolution |> should equal expectedGameState
+        gameState
+        |> toggleEffect Effects.Revolution
+        |> hasEffect Effects.Revolution
+        |> should equal true
     
     [<Test>]
     let ``should toggle revolution OFF`` () =
         
-        let gameState = { newGameState with Revolution = true }
-        let expectedGameState = { gameState with Revolution = false }
+        let gameState = { newGameState with AppliedEffects = Effects.Revolution }
         
-        gameState |> toggleRevolution |> should equal expectedGameState
+        gameState
+        |> toggleEffect Effects.Revolution
+        |> hasEffect Effects.Revolution
+        |> should equal false
