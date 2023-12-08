@@ -31,8 +31,8 @@
         | Ok ( playerCards, topCards ) -> ( player |> setHand playerCards, table |> placeOnTop topCards )
         | _ -> failwith "Unexpected exception"
         
-    let areSameRank =
-        function
+    let areSameRank cards =
+        match cards with
         | [_] -> false
         | head::tail -> tail |> List.forall (sameRank head)
         | [] -> raise (ArgumentException "cards should not be empty")
