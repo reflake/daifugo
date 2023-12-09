@@ -111,3 +111,10 @@ module Straights =
         let cards = [ a Ten Of Spades; a Jack Of Spades; a Queen Of Hearts; a King Of Hearts ]
         
         cards |> areStraight |> should equal true
+        
+    [<Test>]
+    let ``wilds should be counted for straight`` () =
+        
+        let cards = [ a Five Of Diamonds; Joker; Joker; an Eight Of Clubs ]
+        
+        cards |> areStraight |> should equal true

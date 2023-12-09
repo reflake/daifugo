@@ -53,12 +53,26 @@
         
     let areStraight cards =
         
-        let isSuccessor (a, b) =
-            match (a, b) with
-            | ( Concrete a, Concrete b ) -> a + 1 = b
+        let cardValues =
+            cards
+            |> List.map cardValue
+            |> List.filter ((<>) Wild)
+            |> List.map (function
+                        | Concrete value -> value
+                        | _ -> failwith "Unexpected exception")
+            |> List.sort
         
-        cards
-        |> List.map cardValue
-        |> List.sort
-        |> List.pairwise
-        |> List.forall isSuccessor
+        let rec checkSequence cardValues jokers =
+            match cardValues with
+            | [] | [_] -> true
+            | a :: (b :: _ as tail) ->
+                if b - a = 1 then
+                    checkSequence tail jokers
+                elif b - a - 1 <= jokers && jokers > 0 then
+                    checkSequence tail (jokers - (b - a - 1))
+                else
+                    false
+        
+        let jokers = cards |> List.filter isWildCard |> List.length
+            
+        checkSequence cardValues jokers
