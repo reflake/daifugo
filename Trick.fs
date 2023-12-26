@@ -4,6 +4,7 @@
     open Card
     open Player
     open Table
+    open Entities
     
     type Value =
         | Wild
@@ -13,9 +14,9 @@
         
         match card with
         | Joker -> Wild
-        | RegularCard (Two, _) -> Concrete 15
         | RegularCard (rank, _) ->
             match rank with
+            | Two -> Concrete 15
             | Ace -> Concrete 14
             | King -> Concrete 13
             | Queen -> Concrete 12
@@ -39,10 +40,10 @@
 
         let sameRank (a, b) =
             match (a, b) with
-            | (Concrete a, Concrete b) -> a = b
             | (_, Wild) -> true
             | (Wild, _) -> true
-                
+            | (a, b) -> a = b
+
         match cards with
         | [_] -> false
         | [] -> raise (ArgumentException "cards should not be empty")
@@ -75,4 +76,4 @@
         
         let jokers = cards |> List.filter isWildCard |> List.length
             
-        checkSequence cardValues jokers
+        cards |> List.length > 2 && checkSequence cardValues jokers

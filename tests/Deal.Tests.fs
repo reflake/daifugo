@@ -1,6 +1,6 @@
-﻿module deal_tests
+﻿module ``Deal Tests``
 
-    open Card
+    open Entities
     open Player
     open NUnit.Framework
     open Tests_Utils

@@ -1,6 +1,7 @@
-﻿module revolution_tests
+﻿module ``Revolution Tests``
 
-    open Game
+    open Entities
+    open State
     open NUnit.Framework
     open FsUnit
     

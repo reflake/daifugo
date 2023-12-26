@@ -78,11 +78,12 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="AssemblyInfo.fs" />
-        <Compile Include="Card.fs" />
         <Compile Include="Ranking.fs" />
+        <Compile Include="Entities.fs" />
+        <Compile Include="Card.fs" />
         <Compile Include="Player.fs" />
         <Compile Include="Table.fs" />
-        <Compile Include="Game.fs" />
+        <Compile Include="State.fs" />
         <Compile Include="Trick.fs" />
         <Compile Include="Score.fs" />
         <Compile Include="Program.fs" />

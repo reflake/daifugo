@@ -1,9 +1,8 @@
 ﻿module Tests_Utils
 
     open FSharp.Collections
-    open Card
     open Ranking
-    open Player
+    open Entities
     
     type cardProducer = Rank -> Suit -> Card
     

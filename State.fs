@@ -1,19 +1,6 @@
-﻿module Game
+﻿module State
 
-    open System
-    open Card
-    open Table
-
-    [<Flags>]
-    type Effects = | None       = 0x0
-                   | Revolution = 0x1
-    
-    type State = {
-        CurrentPlayerIndex: int
-        Table: Table
-        AppliedEffects: Effects
-        Deck: Deck
-    }
+    open Entities
     
     let newGameState = {
         CurrentPlayerIndex = 0

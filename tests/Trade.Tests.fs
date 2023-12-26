@@ -1,7 +1,7 @@
-﻿module trade_tests
+﻿module ``Trade Tests``
 
     open System
-    open Card
+    open Entities
     open Player
     open Tests_Utils
     open NUnit.Framework

@@ -1,9 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4f048634_002Da8b3_002D421a_002D88b0_002D8681191417e9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="two cards should not be same rank" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests+Hit table&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests+Same Rank&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::54D1EF8D-F05A-412F-A9EB-C35E0BEAFA57::.NETFramework,Version=v4.8::trick_tests+Straights&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Project Location="C:\Users\shamilunusov\Documents\Projects\daifugo\tests" Presentation="&amp;lt;tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>

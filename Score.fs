@@ -1,6 +1,6 @@
 ﻿module Score
 
-    open Player
+    open Entities
     
     let addPoints amount player = { player with Points = player.Points + amount }
     

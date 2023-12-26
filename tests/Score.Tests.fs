@@ -1,4 +1,4 @@
-﻿module score_tests
+﻿module ``Score Tests``
 
     open System
     open Score

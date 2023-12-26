@@ -1,9 +1,10 @@
-﻿module shuffle_tests
+﻿module ``Shuffle Tests``
     
     open Card
     open Tests_Utils
     open NUnit.Framework
     open FsUnit
+    open Entities
     
     let createShuffleCase deck shuffleIndices =
         

@@ -1,9 +1,10 @@
-﻿module card_tests
+﻿module ``Card Tests``
 
     open Card
     open FsUnit
     open NUnit.Framework
     open Tests_Utils
+    open Entities
     
     type wildCardTestCase = {
         Card : Card

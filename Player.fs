@@ -1,19 +1,7 @@
 ﻿module Player
 
     open Card
-    open Ranking
-    
-    type Place = int option
-
-    type Player<'identifier> = {
-        Id: 'identifier
-        Cards: Hand
-        Points: int
-        Place: Place
-        Title: Title
-    }
-
-    type Players<'identifier> = Player<'identifier> list
+    open Entities
         
     let hand (player : Player<'a>) = player.Cards
     

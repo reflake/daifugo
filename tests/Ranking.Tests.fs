@@ -1,8 +1,8 @@
-﻿module ranking_tests
+﻿module ``Ranking Tests``
 
     open System
     open Ranking
-    open Player
+    open Entities
     open FsUnit
     open NUnit.Framework
     

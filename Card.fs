@@ -1,16 +1,6 @@
 ﻿module Card
 
-    type Rank = | Two | Three | Four | Five | Six | Seven | Eight | Nine | Ten | Jack | Queen | King | Ace
-    type Suit = | Hearts | Diamonds | Clubs | Spades
-    type Card = | RegularCard of Rank * Suit
-                | Joker
-                
-                override x.ToString() =
-                    match x with
-                    | RegularCard(rank, suit) -> "a " + rank.ToString() + " of " + suit.ToString()
-                    | Joker -> "a Joker"
-    type Hand = Card list
-    type Deck = Card list
+    open Entities
          
     let sameRank a b =
         match a with
