@@ -54,12 +54,12 @@
         <Compile Include="AssemblyInfo.fs" />
         <Content Include="packages.config" />
         <Compile Include="Tests.Utils.fs" />
-        <Compile Include="Deal.Tests.fs" />
         <Compile Include="Card.Tests.fs" />
-        <Compile Include="Shuffle.Tests.fs" />
+        <Compile Include="Deal.Tests.fs" />
+        <Compile Include="Effect.Tests.fs" />
         <Compile Include="Ranking.Tests.fs" />
-        <Compile Include="Revolution.Tests.fs" />
         <Compile Include="Score.Tests.fs" />
+        <Compile Include="Shuffle.Tests.fs" />
         <Compile Include="Trade.Tests.fs" />
         <Compile Include="Trick.Tests.fs" />
     </ItemGroup>

@@ -84,6 +84,7 @@
         <Compile Include="Player.fs" />
         <Compile Include="Table.fs" />
         <Compile Include="State.fs" />
+        <Compile Include="Effect.fs" />
         <Compile Include="Trick.fs" />
         <Compile Include="Score.fs" />
         <Compile Include="Program.fs" />
